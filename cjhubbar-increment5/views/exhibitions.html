@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Charlie Hubbard">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MonoMuse</title>
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Buy Tickets</a>
+        </nav>
+
+        <main class="main">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/maRY3SyDzMA?si=Gky87WWR-Ie9lS8W" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+            <h2>Echoes in the Static</h2>
+            <p>
+                Step into a room where sound becomes visible. <em>Echoes in the Static</em> is an
+                immersive audio-visual installation that transforms ambient noise — city sounds,
+                human voices, natural frequencies — into cascading waves of light and color. No two
+                visits are ever the same. The exhibition responds to you, and to everyone around you.
+            </p>
+
+            <h2>The Unfinished Canvas</h2>
+            <p>
+                What does it mean for a piece of art to be "done"? <em>The Unfinished Canvas</em>
+                is a collaborative, ever-evolving exhibition where visitors contribute brushstrokes,
+                words, and digital marks to a shared living artwork. Revisit it a week later and
+                find it completely transformed — shaped by hundreds of hands you'll never meet.
+            </p>
+
+            <h2>Ghost in the Grid</h2>
+            <p>
+                Part photography, part data visualization, <em>Ghost in the Grid</em> examines the
+                digital footprints we leave behind without realizing it. Using anonymized public
+                data, this exhibition renders the invisible patterns of modern life into striking,
+                large-scale visual art — and asks: if your data were a painting, what would it look like?
+            </p>
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+
+</html>
