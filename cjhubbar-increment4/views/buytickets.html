@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Charlie Hubbard">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MonoMuse</title>
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse Museum Logo">
+            <h1>Tickets</h1>
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Buy Tickets</a>
+        </nav>
+
+        <main class="main">
+            <h1>Buy Tickets</h1>
+
+            <table>
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th> Price</th>
+                </tr>
+                <tr>
+                    <td>General</td>
+                    <td>Full access to all current exhibitions and installations</td>
+                    <td> $18.00</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>Full access with valid student ID — because curiosity shouldn't have a price tag</td>
+                    <td> $10.00</td>
+                </tr>
+                <tr>
+                    <td>Member</td>
+                    <td>Unlimited visits, early access to new exhibitions, and exclusive member events</td>
+                    <td> $0.00</td>
+                </tr>
+            </table>
+            <h2>April 2026 — Available Dates</h2>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Hours</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>April 5</td>
+                    <td>Sunday</td>
+                    <td>10am – 5pm</td>
+                    <td><button onclick="showForm('April 5')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 12</td>
+                    <td>Sunday</td>
+                    <td>10am – 5pm</td>
+                    <td><button onclick="showForm('April 12')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 18</td>
+                    <td>Saturday</td>
+                    <td>10am – 7pm</td>
+                    <td><button onclick="showForm('April 18')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 26</td>
+                    <td>Sunday</td>
+                    <td>10am – 5pm</td>
+                    <td><button onclick="showForm('April 26')">Buy Now</button></td>
+                </tr>
+            </table>
+            <div id="purchaseForm">
+                <h2>Complete Your Purchase</h2>
+                <p id="selectedDate"></p>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="quantity">Number of Tickets:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <button onclick="submitPurchase()">Complete Purchase</button>
+            </div>
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+
+</html>
