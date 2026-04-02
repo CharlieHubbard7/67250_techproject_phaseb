@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Charlie Hubbard">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MonoMuse</title>
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Buy Tickets</a>
+        </nav>
+
+        <main class="main">
+
+            <h1 style="text-align: center; margin-bottom: 32px;">
+                <button id="toggleForm" onclick="togglePurchaseForm()">Buy Tickets</button>
+            </h1>
+
+            <!-- Ticket Type Cards -->
+            <div class="ticket-cards">
+                <div class="ticket-card">
+                    <h3>General</h3>
+                    <p class="ticket-price">$18</p>
+                    <p>Full access to all current exhibitions and installations</p>
+                </div>
+                <div class="ticket-card">
+                    <h3>Student</h3>
+                    <p class="ticket-price">$10</p>
+                    <p>Full access with valid student ID</p>
+                </div>
+                <div class="ticket-card">
+                    <h3>Member</h3>
+                    <p class="ticket-price">Free</p>
+                    <p>Unlimited visits, early access, and exclusive member events</p>
+                </div>
+            </div>
+
+            <!-- Available Dates -->
+            <div class="tickets-dates">
+                <h2>April 2026 — Available Dates</h2>
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Hours</th>
+                    </tr>
+                    <tr>
+                        <td>April 5</td>
+                        <td>Sunday</td>
+                        <td>10am – 5pm</td>
+                    </tr>
+                    <tr>
+                        <td>April 12</td>
+                        <td>Sunday</td>
+                        <td>10am – 5pm</td>
+                    </tr>
+                    <tr>
+                        <td>April 18</td>
+                        <td>Saturday</td>
+                        <td>10am – 7pm</td>
+                    </tr>
+                    <tr>
+                        <td>April 26</td>
+                        <td>Sunday</td>
+                        <td>10am – 5pm</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Family Image -->
+            <div class="tickets-banner">
+                <img src="../static/family.png" alt="Family at MonoMuse">
+                <p class="media-attribution">Image: MonoMuse Visitor Experience</p>
+            </div>
+
+            <!-- Purchase Form -->
+            <div id="purchaseForm">
+                <h2>Complete Your Purchase</h2>
+
+                <div class="form-section">
+                    <h3>Your Visit</h3>
+
+                    <label for="visitDate">Visit Date:</label>
+                    <select id="visitDate">
+                        <option value="">-- Select a Date --</option>
+                        <option value="April 5 (Sunday, 10am–5pm)">April 5 — Sunday, 10am–5pm</option>
+                        <option value="April 12 (Sunday, 10am–5pm)">April 12 — Sunday, 10am–5pm</option>
+                        <option value="April 18 (Saturday, 10am–7pm)">April 18 — Saturday, 10am–7pm</option>
+                        <option value="April 26 (Sunday, 10am–5pm)">April 26 — Sunday, 10am–5pm</option>
+                    </select>
+
+                    <label for="ticketType">Ticket Type:</label>
+                    <select id="ticketType" onchange="calcPrice()">
+                        <option value="">-- Select --</option>
+                        <option value="General">General Admission — $18</option>
+                        <option value="Student">Student — $10</option>
+                        <option value="Member">Member — Free</option>
+                    </select>
+
+                    <label for="quantity">Number of Tickets (1–10):</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" oninput="calcPrice()">
+                </div>
+
+                <div class="form-divider"></div>
+
+                <div class="form-section">
+                    <h3>Your Info</h3>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" name="zip" placeholder="15213" maxlength="5">
+
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="mailingList" name="mailingList">
+                        <label for="mailingList">Join our mailing list for updates and offers</label>
+                    </div>
+                </div>
+
+                <div id="priceDisplay"></div>
+
+                <button onclick="submitPurchase()">Place Order</button>
+            </div>
+
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+
+</html>

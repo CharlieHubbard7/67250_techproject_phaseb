@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Charlie Hubbard">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MonoMuse — Order Confirmed</title>
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Buy Tickets</a>
+        </nav>
+
+        <main class="main">
+            <div id="confirmationBox">
+                <div id="checkmark">&#10003;</div>
+                <h1>Order Confirmed!</h1>
+                <p id="confirmMsg"></p>
+
+                <div class="confirm-details">
+                    <div class="confirm-row">
+                        <span class="confirm-label">Visit Date</span>
+                        <span id="conf-date" class="confirm-value"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Ticket Type</span>
+                        <span id="conf-type" class="confirm-value"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Quantity</span>
+                        <span id="conf-qty" class="confirm-value"></span>
+                    </div>
+                    <div class="confirm-row">
+                        <span class="confirm-label">Email</span>
+                        <span id="conf-email" class="confirm-value"></span>
+                    </div>
+                    <div class="confirm-row confirm-total">
+                        <span class="confirm-label">Total Charged</span>
+                        <span id="conf-total" class="confirm-value"></span>
+                    </div>
+                </div>
+
+                <p id="conf-mailing"></p>
+                <button onclick="window.location.href='buytickets.html'">Buy More Tickets</button>
+                <button onclick="window.location.href='../index.html'">Back to Home</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+
+    <script>
+        var type = localStorage.getItem("mm_ticketType");
+        var qty = localStorage.getItem("mm_qty");
+        var email = localStorage.getItem("mm_email");
+        var total = localStorage.getItem("mm_total");
+        var date = localStorage.getItem("mm_date");
+        var mail = localStorage.getItem("mm_mailing");
+
+        document.getElementById("confirmMsg").innerHTML =
+            "Thank you for your purchase! Your tickets to MonoMuse are confirmed. We look forward to seeing you.";
+        document.getElementById("conf-date").innerHTML = date || "—";
+        document.getElementById("conf-type").innerHTML = type || "—";
+        document.getElementById("conf-qty").innerHTML = qty || "—";
+        document.getElementById("conf-email").innerHTML = email || "—";
+        document.getElementById("conf-total").innerHTML = "$" + (total || "0.00");
+
+        if (mail === "true") {
+            document.getElementById("conf-mailing").innerHTML =
+                "✓ You've been added to our mailing list!";
+        }
+
+        $("#confirmationBox").hide().fadeIn(800);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Charlie Hubbard">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>MonoMuse</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <script src="./static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="./static/logo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+            <a href="index.html">Home</a>
+            <a href="views/explore.html">Explore</a>
+            <a href="views/exhibitions.html">Exhibitions</a>
+            <a href="views/buytickets.html">Buy Tickets</a>
+        </nav>
+
+        <main class="main">
+            <h2 id="greeting"></h2>
+            <div class="home-layout">
+                <div class="home-image">
+                    <img src="./static/interior.png" alt="MonoMuse gallery">
+                    <p class="media-attribution">Image: MonoMuse Interior Gallery by ChatGPT</p>
+                </div>
+                <div class="home-text">
+                    <p id="shortIntro">What happens when art and technology collide? MonoMuse was built to find out.</p>
+                    <p id="longIntro">From hands-on installations you can touch and reshape, to rotating collections
+                        that challenge what you thought you knew about creativity — there's always something new to
+                        discover here. First visit or fifth, you won't leave the same way you came in.</p>
+                    <span id="readMore">Read More</span>
+                    <span id="readLess">Read Less</span>
+                </div>
+            </div>
+            <button onclick="window.location.href='views/buytickets.html'">Buy Tickets</button>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2026 MonoMuse. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
